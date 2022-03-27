@@ -1,0 +1,45 @@
+﻿@model appdemo.Models.Persona
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenidos a todos</h1>
+   <form asp-controller="Home"  asp-action="Consultar">
+  <div class="form-group">
+    <label asp-for="Dni" for="Dni">D.N.I</label>
+    <input asp-for="Dni" type="Dni" class="form-control" id="Dni">
+  </div>
+  <button type="submit" 
+  class="btn btn-primary" 
+  asp-controller="Home"  asp-action="Opcion1">Opcion 1</button>
+  <button type="submit" 
+  class="btn btn-primary" 
+  asp-controller="Home"  asp-action="Opcion2">Opcion 2</button>
+  
+</form>
+<form>
+    <h1>@ViewData["Message"]</h1>
+<div>
+    <h4>Persona</h4>
+     <hr />
+        <dl class="row">
+            <dt class="col-sm-2 text-danger">
+                @Html.DisplayFor(model =>model.Nombre)
+            </dt>
+            <dt class="col-sm-2 d-inline p-2 bg-primary text-white">
+                @Html.DisplayFor(model =>model.Apellido)
+            </dt>
+            <dt class="col-sm-2">
+                @Html.DisplayFor(model =>model.Genero)
+            </dt>
+            <dt class="col-sm-2">
+                @Html.DisplayFor(model =>model.fechaVencimiento)
+            </dt>
+        </dl>
+</div>
+    
+</form>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">
+    building Web apps with ASP.NET Core</a>.</p>
+</div>
